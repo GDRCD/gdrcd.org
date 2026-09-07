@@ -2,6 +2,7 @@
   "name": "gdrcd.org",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.34.5",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
