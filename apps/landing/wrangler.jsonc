@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "gdrcd-landing",
+  "compatibility_date": "2026-09-11",
+  "routes": [
+    {
+      "pattern": "gdrcd.org",
+      "custom_domain": true,
+    },
+  ],
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+  },
+}

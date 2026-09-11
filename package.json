@@ -1,16 +1,20 @@
 {
-  "name": "gdrcd-site",
+  "name": "gdrcd.org",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "prepare": "husky",
-    "docs:dev": "pnpm --filter docs dev",
-    "docs:build": "pnpm --filter docs build",
-    "docs:preview": "pnpm --filter docs preview",
-    "landing:dev": "pnpm --filter landing dev",
-    "landing:build": "pnpm --filter landing build",
-    "landing:preview": "pnpm --filter landing preview",
-    "check": "tsc --noEmit && pnpm -r check",
+    "build": "pnpm -r build",
+    "check": "pnpm -r check",
+    "docs:dev": "pnpm --filter @gdrcd/docs dev",
+    "docs:build": "pnpm --filter @gdrcd/docs build",
+    "docs:preview": "pnpm --filter @gdrcd/docs preview",
+    "landing:dev": "pnpm --filter @gdrcd/landing dev",
+    "landing:build": "pnpm --filter @gdrcd/landing build",
+    "landing:preview": "pnpm --filter @gdrcd/landing preview",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint": "eslint .",

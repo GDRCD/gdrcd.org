@@ -1,0 +1,23 @@
+{
+  "name": "@gdrcd/docs",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro build && wrangler dev",
+    "check": "astro check",
+    "deploy": "astro build && wrangler deploy"
+  },
+  "dependencies": {
+    "astro": "^7.3.2",
+    "@lancher-dev/jaad": "^0.8.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6",
+    "wrangler": "^4.130.0"
+  }
+}

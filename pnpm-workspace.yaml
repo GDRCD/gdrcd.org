@@ -1,5 +1,6 @@
 packages:
-  - "docs"
-  - "landing"
+  - "apps/*"
+  - "packages/*"
 allowBuilds:
   esbuild: true
+  workerd: true
