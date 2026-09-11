@@ -1,15 +1,44 @@
 {
-  "name": "gdrcd.org",
+  "name": "gdrcd-site",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.34.5",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "prepare": "husky",
+    "docs:dev": "pnpm --filter docs dev",
+    "docs:build": "pnpm --filter docs build",
+    "docs:preview": "pnpm --filter docs preview",
+    "landing:dev": "pnpm --filter landing dev",
+    "landing:build": "pnpm --filter landing build",
+    "landing:preview": "pnpm --filter landing preview",
+    "check": "tsc --noEmit && pnpm -r check",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
-  "dependencies": {
-    "astro": "^7.3.1",
-    "@lancher-dev/jaad": "^0.8.1"
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.2.0",
+    "@typescript-eslint/parser": "^8.65.0",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^3.1.0",
+    "globals": "^17.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.2.0",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "typescript": "^6",
+    "typescript-eslint": "^8.67.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,json,md}": [
+      "prettier --write"
+    ]
   }
 }

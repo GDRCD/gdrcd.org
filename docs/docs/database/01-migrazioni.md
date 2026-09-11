@@ -18,12 +18,12 @@ Per applicare le migrations, è sufficiente navigare all'endpoint `/installer.ph
 
 ![error](/migrations/error.png)
 
-
 ## Funzionamento delle Migrations
 
 Le migrations sono script che descrivono in modo incrementale le modifiche strutturali al database (creazione, modifica, eliminazione di tabelle, colonne, indici). Ogni migration rappresenta una singola operazione o gruppo di operazioni correlate e viene salvata come file separato, seguendo una convenzione di naming cronologica e descrittiva.
 
 Il sistema di migrations esegue automaticamente i file in ordine temporale, applicando le modifiche necessarie per portare lo schema del database alla versione desiderata. Questo consente di:
+
 - Versionare lo schema del database
 - Applicare e condividere facilmente le evoluzioni tra ambienti di sviluppo, test e produzione
 - Eseguire rollback in caso di errori
@@ -37,6 +37,7 @@ Ogni modifica strutturale (creazione, aggiornamento, eliminazione di tabelle, co
 ### Tracciamento delle migrations
 
 Quando si applica una migration, GDRCD registra l'operazione nella tabella `_gdrcd_db_versions`. Per ogni migration applicata viene inserito un record con:
+
 - `migration_id`: la parte numerica iniziale del nome del file della migration (ad esempio, `202508310218`).
 - `applied_on`: la data e ora di applicazione della migration
 
@@ -47,6 +48,7 @@ Questa tabella consente di tenere traccia di tutte le migrations già eseguite, 
 ### Come scrivere una migration
 
 Le migrations vanno scritte nella cartella `db_versions` del progetto. Ogni migration è una classe PHP che estende `DbMigration` e implementa due metodi principali:
+
 - `up()`: applica le modifiche desiderate al database (ad esempio, crea una tabella o aggiunge una colonna)
 - `down()`: annulla le modifiche apportate da `up()` (ad esempio, elimina la tabella o la colonna creata)
 
@@ -93,13 +95,13 @@ I nomi dei file delle migrazioni devono includere una descrizione dell'operazion
 La descrizione deve seguire il case dell'esempio e, quando possibile, uno dei seguenti template per uniformità:
 
 - `[Create/Drop]_[nometabella]_Table`
-	*Quando si crea o elimina una tabella*
+  _Quando si crea o elimina una tabella_
 - `[Add/Drop/Update]_[nomecolonna]_Column_In_[nometabella]_Table`
-	*Quando si aggiunge, elimina o modifica una colonna*
+  _Quando si aggiunge, elimina o modifica una colonna_
 - `[Add/Drop/Update]_[nomeindice]_Index_In_[nometabella]_Table`
-	*Quando si aggiunge, elimina o modifica un indice*
+  _Quando si aggiunge, elimina o modifica un indice_
 - `[Insert/Delete/Update]_[nomedato]_In_[nometabella]_Table`
-	*Quando si aggiunge, elimina o modifica uno o più records in una stessa tabella*
+  _Quando si aggiunge, elimina o modifica uno o più records in una stessa tabella_
 
 **Esempi:**
 

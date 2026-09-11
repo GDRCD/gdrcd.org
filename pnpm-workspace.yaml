@@ -1,0 +1,5 @@
+packages:
+  - "docs"
+  - "landing"
+allowBuilds:
+  esbuild: true
