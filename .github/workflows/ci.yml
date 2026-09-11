@@ -21,7 +21,6 @@ jobs:
           version: 12
           runtime: node@24
           cache: true
-          require-lockfile: true
 
       - name: Lint
         run: pnpm lint
