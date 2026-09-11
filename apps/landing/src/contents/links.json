@@ -1,0 +1,13 @@
+[
+  { "id": "docs", "label": "Documentazione", "href": "https://docs.gdrcd.org" },
+  {
+    "id": "repository",
+    "label": "GitHub",
+    "href": "https://github.com/GDRCD/GDRCD"
+  },
+  {
+    "id": "community",
+    "label": "Community",
+    "href": "https://discord.gdrcd.org"
+  }
+]

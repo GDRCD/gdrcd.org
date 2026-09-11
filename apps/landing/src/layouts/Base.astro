@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+const {
+  title = "GDRCD",
+  description = "Il software CMS open source per la creazione di giochi di ruolo testuali basati su chat",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/brand/gdrcd-die-inverted.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-bg text-ink dark:bg-bg-dark dark:text-ink-dark min-h-screen font-sans antialiased"
+  >
+    <div class="flex min-h-screen flex-col">
+      <slot />
+    </div>
+  </body>
+</html>

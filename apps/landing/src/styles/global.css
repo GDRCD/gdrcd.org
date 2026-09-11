@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-ink: #1b1b19;
+  --color-muted: #55524c;
+  --color-faint: #77746d;
+  --color-tonal: #eae7e0;
+  --color-tonal-hi: #dfdbd2;
+  --color-chip: #efe7e1;
+  --color-chip-ink: #8a3a16;
+
+  --color-bg-dark: #121211;
+  --color-surface-dark: #1c1c1a;
+  --color-ink-dark: #edebe6;
+  --color-muted-dark: #aba79f;
+  --color-faint-dark: #86837c;
+  --color-tonal-dark: #2b2b28;
+  --color-tonal-hi-dark: #383834;
+  --color-chip-dark: #33261f;
+  --color-chip-ink-dark: #e7a177;
+
+  --shadow-surface:
+    0 1px 2px rgb(27 27 25 / 0.06), 0 6px 24px rgb(27 27 25 / 0.06);
+  --shadow-surface-dark:
+    0 1px 2px rgb(0 0 0 / 0.5), 0 8px 28px rgb(0 0 0 / 0.45);
+}
+
+html {
+  background: var(--color-bg);
+}
+.brand-mark {
+  mix-blend-mode: multiply;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: var(--color-bg-dark);
+  }
+
+  .brand-mark {
+    mix-blend-mode: screen;
+    filter: invert(1);
+  }
+
+  ::selection {
+    background: var(--color-ink-dark);
+    color: var(--color-bg-dark);
+  }
+}

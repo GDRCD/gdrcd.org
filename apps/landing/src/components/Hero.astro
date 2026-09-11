@@ -1,0 +1,55 @@
+---
+const release = "5.6.0.6";
+---
+
+<main class="flex flex-1 items-center p-3 pb-6 sm:p-6 lg:p-8 lg:pb-10">
+  <div
+    class="bg-surface shadow-surface dark:bg-surface-dark dark:shadow-surface-dark mx-auto grid w-full max-w-[1320px] grid-cols-1 items-center gap-10 rounded-[20px] p-8 min-[1100px]:grid-cols-2 sm:rounded-[28px] sm:p-12 lg:grid-cols-2 lg:gap-20 lg:p-22 lg:max-[1100px]:grid-cols-1"
+  >
+    <div class="min-w-0">
+      <a
+        href=`https://github.com/GDRCD/GDRCD/releases/tag/${release}`
+        class="bg-chip text-chip-ink dark:bg-chip-dark dark:text-chip-ink-dark inline-flex h-8 items-center rounded-full px-3.5 font-mono text-xs tracking-[0.08em] uppercase transition-opacity hover:opacity-80"
+        >Ultima release:<span class="ml-1 font-bold">{release}</span></a
+      >
+
+      <h1
+        class="mt-6 text-[clamp(2.5rem,5vw,5rem)] leading-[0.95] font-bold tracking-[-0.035em] text-balance sm:mt-10"
+      >
+        Crea il tuo<br /><span class="text-[150%] sm:text-[100%]"
+          >Play by Chat</span
+        >
+      </h1>
+
+      <p
+        class="text-muted dark:text-muted-dark mt-5 max-w-[44ch] text-base leading-relaxed text-pretty sm:mt-8 sm:text-lg"
+      >
+        Il software CMS open source per la creazione di giochi di ruolo testuali
+        basati su chat.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-3 max-[400px]:flex-col sm:mt-11">
+        <a
+          href="https://github.com/GDRCD/GDRCD"
+          class="bg-ink text-bg dark:bg-ink-dark dark:text-bg-dark inline-flex h-13 items-center justify-center rounded-full px-7 text-[0.9375rem] font-medium shadow-sm transition-colors hover:bg-[#33322e] max-[400px]:w-full dark:hover:bg-[#d6d3cc]"
+          >Inizia</a
+        >
+        <a
+          href="https://github.com/GDRCD/GDRCD/wiki"
+          class="bg-tonal text-ink hover:bg-tonal-hi dark:bg-tonal-dark dark:text-ink-dark dark:hover:bg-tonal-hi-dark inline-flex h-13 items-center justify-center rounded-full px-7 text-[0.9375rem] font-medium transition-colors max-[400px]:w-full"
+          >Documentazione</a
+        >
+      </div>
+    </div>
+
+    <div class="flex min-w-0 justify-center">
+      <img
+        src="/brand/gdrcd-die.png"
+        alt="Dado poliedrico GDRCD"
+        width="1200"
+        height="1200"
+        class="brand-mark h-auto w-full max-w-[240px] sm:max-w-[420px]"
+      />
+    </div>
+  </div>
+</main>
