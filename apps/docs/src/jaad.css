@@ -1,0 +1,74 @@
+/* Tema GDRCD per JAAD.
+ *
+ * I semi sono gli stessi token della landing (apps/landing/src/styles/global.css):
+ * carta calda, inchiostro caldo e un accento terracotta.
+ *
+ *   landing              ->  jaad
+ *   --color-bg           ->  --color-background
+ *   --color-surface      ->  --color-surface
+ *   --color-ink          ->  --color-foreground-bright
+ *   --color-chip-ink     ->  --color-primary
+ */
+
+:root {
+  --color-background: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-foreground: #3b3935;
+  --color-foreground-bright: #1b1b19;
+  --color-primary: #8a3a16;
+
+  --color-primary-dark: #6b2b0f;
+
+  --color-error: #b4463a;
+  --color-warning: #b3812f;
+  --color-info: #4a7a9b;
+  --color-success: #4f8a68;
+
+  --font-sans: "DM Sans", Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html.dark {
+  --color-background: #121211;
+  --color-surface: #1c1c1a;
+  --color-foreground: #cdc9c2;
+  --color-foreground-bright: #edebe6;
+  --color-primary: #e7a177;
+  --color-primary-dark: #f2b998;
+
+  --color-error: #e88b7d;
+  --color-warning: #dcae63;
+  --color-info: #8fbcd8;
+  --color-success: #86c2a0;
+}
+
+.jaamd-content h1,
+.jaamd-content h2,
+.jaamd-content h3,
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
+}
+
+:root,
+html.dark {
+  --jaamd-pre-fg: var(--color-foreground);
+  --jaamd-blockquote-fg: var(--color-foreground-secondary);
+  --jaamd-em-fg: var(--color-foreground-bright);
+}
+
+header img {
+  mix-blend-mode: multiply;
+}
+
+html.dark header img {
+  mix-blend-mode: screen;
+  filter: invert(1);
+}
+
+::selection {
+  background: var(--color-foreground-bright);
+  color: var(--color-background);
+}
