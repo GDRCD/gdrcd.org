@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import GithubLogo from "@/assets/icons/github.svg";
+import DiscordLogo from "@/assets/icons/discord.svg";
 
 const linksCollection = await getCollection("links");
 const links = linksCollection.map((item) => item.data);
@@ -31,6 +33,20 @@ const links = linksCollection.map((item) => item.data);
           </a>
         ))
       }
+      <a
+        href="https://github.com/GDRCD/GDRCD"
+        aria-label="GDRCD su GitHub"
+        class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+      >
+        <GithubLogo class="size-5" aria-hidden="true" />
+      </a>
+      <a
+        href="https://discord.gdrcd.org"
+        aria-label="Community GDRCD su Discord"
+        class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+      >
+        <DiscordLogo class="size-5" aria-hidden="true" />
+      </a>
     </nav>
   </div>
 </header>
