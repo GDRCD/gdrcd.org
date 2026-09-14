@@ -1,26 +1,18 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import CloseIcon from "@/assets/icons/x.svg";
-import DiscordLogo from "@/assets/icons/discord.svg";
-import GithubLogo from "@/assets/icons/github.svg";
 import MenuIcon from "@/assets/icons/menu-2.svg";
+import icons from "@/libs/icons";
 
 interface Props {
   links: Array<CollectionEntry<"links">["data"]>;
 }
 
 const { links } = Astro.props;
-const icons = {
-  repository: GithubLogo,
-  community: DiscordLogo,
-};
-const textLinks = links.filter(({ useIcon }) => !useIcon);
-const iconLinks = links
-  .filter(({ useIcon }) => useIcon)
-  .map((link) => ({
-    ...link,
-    Icon: icons[link.id as keyof typeof icons],
-  }));
+const textLinks = links.filter(({ icon }) => !icon);
+const iconLinks = links.flatMap((link) =>
+  link.icon ? [{ ...link, Icon: icons[link.icon] }] : [],
+);
 ---
 
 <div class="contents sm:hidden" data-mobile-navigation>

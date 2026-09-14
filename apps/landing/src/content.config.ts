@@ -9,7 +9,8 @@ const links = defineCollection({
     label: z.string(),
     href: z.string(),
     ariaLabel: z.string().optional(),
-    useIcon: z.boolean().default(false),
+    icon: z.enum(["github", "discord"]).optional(),
+    order: z.number().default(0),
   }),
 });
 

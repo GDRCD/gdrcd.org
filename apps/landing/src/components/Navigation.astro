@@ -1,17 +1,12 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import DiscordLogo from "@/assets/icons/discord.svg";
-import GithubLogo from "@/assets/icons/github.svg";
+import icons from "@/libs/icons";
 
 interface Props {
   links: Array<CollectionEntry<"links">["data"]>;
 }
 
 const { links } = Astro.props;
-const icons = {
-  repository: GithubLogo,
-  community: DiscordLogo,
-};
 ---
 
 <nav
@@ -19,18 +14,22 @@ const icons = {
   class="hidden items-center gap-1 sm:flex"
 >
   {
-    links.map(({ id, href, label, ariaLabel, useIcon }) => {
-      const Icon = useIcon ? icons[id as keyof typeof icons] : undefined;
+    links.map(({ href, label, ariaLabel, icon }) => {
+      const Icon = icon ? icons[icon] : undefined;
 
-      return Icon ? (
-        <a
-          href={href}
-          aria-label={ariaLabel ?? label}
-          class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
-        >
-          <Icon class="size-5" aria-hidden="true" />
-        </a>
-      ) : (
+      if (Icon) {
+        return (
+          <a
+            href={href}
+            aria-label={ariaLabel ?? label}
+            class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+          >
+            <Icon class="size-5" aria-hidden="true" />
+          </a>
+        );
+      }
+
+      return (
         <a
           href={href}
           class="text-muted hover:bg-tonal hover:text-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark inline-flex h-10 items-center rounded-full px-4 text-sm font-medium transition-colors"

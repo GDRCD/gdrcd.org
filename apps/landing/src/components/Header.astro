@@ -4,7 +4,9 @@ import MobileNavigation from "./MobileNavigation.astro";
 import Navigation from "./Navigation.astro";
 
 const linksCollection = await getCollection("links");
-const links = linksCollection.map(({ data }) => data);
+const links = linksCollection
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(({ data }) => data);
 ---
 
 <header class="relative z-20">

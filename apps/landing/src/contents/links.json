@@ -1,17 +1,24 @@
 [
-  { "id": "docs", "label": "Documentazione", "href": "https://docs.gdrcd.org" },
+  {
+    "id": "docs",
+    "label": "Documentazione",
+    "href": "https://docs.gdrcd.org",
+    "order": 1
+  },
   {
     "id": "repository",
     "label": "GitHub",
     "ariaLabel": "GDRCD su GitHub",
-    "useIcon": true,
-    "href": "https://github.com/GDRCD/GDRCD"
+    "icon": "github",
+    "href": "https://github.com/GDRCD/GDRCD",
+    "order": 2
   },
   {
     "id": "community",
     "label": "Community",
     "ariaLabel": "Community GDRCD su Discord",
-    "useIcon": true,
-    "href": "https://discord.gdrcd.org"
+    "icon": "discord",
+    "href": "https://discord.gdrcd.org",
+    "order": 3
   }
 ]
