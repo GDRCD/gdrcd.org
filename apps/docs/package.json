@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "astro": "^7.3.2",
-    "@lancher-dev/jaad": "^0.9.0"
+    "@lancher-dev/jaad": "^0.9.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

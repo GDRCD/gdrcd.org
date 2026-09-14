@@ -54,8 +54,8 @@ importers:
   apps/docs:
     dependencies:
       '@lancher-dev/jaad':
-        specifier: ^0.9.0
-        version: 0.9.0(astro@7.3.2(@astrojs/markdown-remark@7.3.1(supports-color@10.2.2))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.1)(jiti@2.7.0)(yaml@2.9.0))(supports-color@10.2.2)
+        specifier: ^0.9.1
+        version: 0.9.1(astro@7.3.2(@astrojs/markdown-remark@7.3.1(supports-color@10.2.2))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.1)(jiti@2.7.0)(yaml@2.9.0))(supports-color@10.2.2)
       astro:
         specifier: ^7.3.2
         version: 7.3.2(@astrojs/markdown-remark@7.3.1(supports-color@10.2.2))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.1)(jiti@2.7.0)(yaml@2.9.0)
@@ -1086,8 +1086,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@lancher-dev/jaad@0.9.0':
-    resolution: {integrity: sha512-xddm/wsz2/7qY1ZHUUbgYJdlr51JtvFYSk9ItLVv11wy5nP3KcOly42IJfkJVUB1qYMDaKd8YHfLV7dAxxJK2Q==}
+  '@lancher-dev/jaad@0.9.1':
+    resolution: {integrity: sha512-92rTRmqOswQpHEW9d4hfa3T8R7tH0MeCyDZvHBF2ONvMVWh8rDENIaQlHNr+sQVmHws7DX1h+ouOJk3kuhPKoA==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
       astro: '>=7.0.0 <8.0.0'
@@ -4100,7 +4100,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@lancher-dev/jaad@0.9.0(astro@7.3.2(@astrojs/markdown-remark@7.3.1(supports-color@10.2.2))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.1)(jiti@2.7.0)(yaml@2.9.0))(supports-color@10.2.2)':
+  '@lancher-dev/jaad@0.9.1(astro@7.3.2(@astrojs/markdown-remark@7.3.1(supports-color@10.2.2))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.1)(jiti@2.7.0)(yaml@2.9.0))(supports-color@10.2.2)':
     dependencies:
       '@astrojs/sitemap': 3.7.4
       '@lancher-dev/jaamd': 0.9.2(astro@7.3.2(@astrojs/markdown-remark@7.3.1(supports-color@10.2.2))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.5.1)(jiti@2.7.0)(yaml@2.9.0))(supports-color@10.2.2)
