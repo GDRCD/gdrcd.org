@@ -1,0 +1,120 @@
+---
+import type { CollectionEntry } from "astro:content";
+import CloseIcon from "@/assets/icons/x.svg";
+import DiscordLogo from "@/assets/icons/discord.svg";
+import GithubLogo from "@/assets/icons/github.svg";
+import MenuIcon from "@/assets/icons/menu-2.svg";
+
+interface Props {
+  links: Array<CollectionEntry<"links">["data"]>;
+}
+
+const { links } = Astro.props;
+const icons = {
+  repository: GithubLogo,
+  community: DiscordLogo,
+};
+const textLinks = links.filter(({ useIcon }) => !useIcon);
+const iconLinks = links
+  .filter(({ useIcon }) => useIcon)
+  .map((link) => ({
+    ...link,
+    Icon: icons[link.id as keyof typeof icons],
+  }));
+---
+
+<div class="contents sm:hidden" data-mobile-navigation>
+  <button
+    type="button"
+    aria-controls="mobile-navigation-menu"
+    aria-expanded="false"
+    aria-label="Apri menu di navigazione"
+    class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+    data-menu-toggle
+  >
+    <MenuIcon class="size-5" aria-hidden="true" data-menu-open-icon />
+    <CloseIcon class="hidden size-5" aria-hidden="true" data-menu-close-icon />
+  </button>
+
+  <nav
+    id="mobile-navigation-menu"
+    aria-label="Navigazione mobile"
+    class="bg-surface shadow-surface dark:bg-surface-dark dark:shadow-surface-dark absolute top-full right-4 left-4 rounded-2xl p-2"
+    data-menu
+    hidden
+  >
+    {
+      textLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class="text-ink hover:bg-tonal focus-visible:ring-ink dark:text-ink-dark dark:hover:bg-tonal-dark dark:focus-visible:ring-ink-dark flex min-h-11 items-center rounded-xl px-3.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
+        >
+          {label}
+        </a>
+      ))
+    }
+    <div class="bg-tonal dark:bg-tonal-dark my-1 h-px" role="separator"></div>
+    {
+      iconLinks.map(({ href, label, Icon }) => (
+        <a
+          href={href}
+          class="text-ink hover:bg-tonal focus-visible:ring-ink dark:text-ink-dark dark:hover:bg-tonal-dark dark:focus-visible:ring-ink-dark flex min-h-11 items-center gap-3 rounded-xl px-3.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
+        >
+          <Icon
+            class="text-muted dark:text-muted-dark size-5"
+            aria-hidden="true"
+          />
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-mobile-navigation]");
+  const toggle = root?.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = root?.querySelector<HTMLElement>("[data-menu]");
+  const openIcon = toggle?.querySelector<SVGElement>("[data-menu-open-icon]");
+  const closeIcon = toggle?.querySelector<SVGElement>("[data-menu-close-icon]");
+
+  const isMenuOpen = () => toggle?.getAttribute("aria-expanded") === "true";
+
+  const setMenuOpen = (isOpen: boolean) => {
+    if (!toggle || !menu) return;
+
+    menu.toggleAttribute("hidden", !isOpen);
+    openIcon?.classList.toggle("hidden", isOpen);
+    closeIcon?.classList.toggle("hidden", !isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute(
+      "aria-label",
+      isOpen ? "Chiudi menu di navigazione" : "Apri menu di navigazione",
+    );
+  };
+
+  toggle?.addEventListener("click", () => setMenuOpen(!isMenuOpen()));
+
+  document.addEventListener("click", (event) => {
+    if (isMenuOpen() && !root?.contains(event.target as Node)) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && isMenuOpen()) {
+      setMenuOpen(false);
+      toggle?.focus();
+    }
+  });
+
+  menu?.addEventListener("click", (event) => {
+    if ((event.target as Element).closest("a")) setMenuOpen(false);
+  });
+
+  window
+    .matchMedia("(min-width: 640px)")
+    .addEventListener("change", (event) => {
+      if (event.matches) setMenuOpen(false);
+    });
+</script>

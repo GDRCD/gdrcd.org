@@ -1,15 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import GithubLogo from "@/assets/icons/github.svg";
-import DiscordLogo from "@/assets/icons/discord.svg";
+import MobileNavigation from "./MobileNavigation.astro";
+import Navigation from "./Navigation.astro";
 
 const linksCollection = await getCollection("links");
-const links = linksCollection.map((item) => item.data);
+const links = linksCollection.map(({ data }) => data);
 ---
 
-<header>
+<header class="relative z-20">
   <div
-    class="mx-auto flex min-h-18 w-full max-w-330 flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-3 sm:px-8 lg:px-10"
+    class="mx-auto flex min-h-18 w-full max-w-330 items-center justify-between gap-6 px-4 py-3 sm:px-8 lg:px-10"
   >
     <a href="/" class="flex items-center">
       <img
@@ -20,33 +20,7 @@ const links = linksCollection.map((item) => item.data);
         class="brand-mark h-6 w-auto"
       />
     </a>
-    <nav
-      class="flex w-full flex-wrap items-center justify-between gap-0.5 sm:w-auto sm:justify-start sm:gap-1"
-    >
-      {
-        links.map((l) => (
-          <a
-            href={l.href}
-            class="text-muted hover:bg-tonal hover:text-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark inline-flex h-10 items-center rounded-full px-2.5 text-[13px] font-medium transition-colors sm:px-4 sm:text-sm"
-          >
-            {l.label}
-          </a>
-        ))
-      }
-      <a
-        href="https://github.com/GDRCD/GDRCD"
-        aria-label="GDRCD su GitHub"
-        class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
-      >
-        <GithubLogo class="size-5" aria-hidden="true" />
-      </a>
-      <a
-        href="https://discord.gdrcd.org"
-        aria-label="Community GDRCD su Discord"
-        class="text-muted hover:bg-tonal hover:text-ink focus-visible:ring-ink dark:text-muted-dark dark:hover:bg-tonal-dark dark:hover:text-ink-dark dark:focus-visible:ring-ink-dark inline-flex size-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
-      >
-        <DiscordLogo class="size-5" aria-hidden="true" />
-      </a>
-    </nav>
+    <Navigation links={links} />
+    <MobileNavigation links={links} />
   </div>
 </header>

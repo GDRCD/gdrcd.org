@@ -8,6 +8,8 @@ const links = defineCollection({
     id: z.string(),
     label: z.string(),
     href: z.string(),
+    ariaLabel: z.string().optional(),
+    useIcon: z.boolean().default(false),
   }),
 });
 

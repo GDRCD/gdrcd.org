@@ -1,1 +1,17 @@
-[{ "id": "docs", "label": "Documentazione", "href": "https://docs.gdrcd.org" }]
+[
+  { "id": "docs", "label": "Documentazione", "href": "https://docs.gdrcd.org" },
+  {
+    "id": "repository",
+    "label": "GitHub",
+    "ariaLabel": "GDRCD su GitHub",
+    "useIcon": true,
+    "href": "https://github.com/GDRCD/GDRCD"
+  },
+  {
+    "id": "community",
+    "label": "Community",
+    "ariaLabel": "Community GDRCD su Discord",
+    "useIcon": true,
+    "href": "https://discord.gdrcd.org"
+  }
+]
