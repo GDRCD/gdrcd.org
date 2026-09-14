@@ -4,7 +4,7 @@ Questa documentazione illustra i tre flussi principali che gestiscono la chat AJ
 
 ---
 
-## 1. Lettura Messaggi Chat (`read`)
+## Lettura Messaggi Chat (`read`)
 
 ![chat_read](/chat/chat_read.png)
 
@@ -28,7 +28,7 @@ gdrcd_api_output($azioni);
 
 ### Dettaglio Delle Funzioni PHP Coinvolte
 
-#### 1. gdrcd_chat_read_messages()
+#### `gdrcd_chat_read_messages()`
 
 Recupera le azioni dal database formattate in HTML e le organizza in un array pronto per essere stampato all'esterno.
 
@@ -53,7 +53,7 @@ function gdrcd_chat_read_messages($luogo, $last_id = 0) {
 }
 ```
 
-#### 2. gdrcd_chat_message_handler()
+#### `gdrcd_chat_message_handler()`
 
 Formatta ogni messaggio in HTML in base alla tipologia.
 
@@ -71,7 +71,7 @@ function gdrcd_chat_message_handler($azione) {
 }
 ```
 
-#### 3. gdrcd_api_output()
+#### `gdrcd_api_output()`
 
 Restituisce la risposta in formato JSON.
 
@@ -82,7 +82,7 @@ function gdrcd_api_output($status) {
 }
 ```
 
-#### **Formattazione HTML delle azioni**
+#### Formattazione HTML delle azioni
 
 La formattazione delle azioni in HTML è demandata alle funzioni con suffisso `_format`. Ogni tipologia di azione ha una specifica funzione `_format` responsabile della sua conversione in HTML.
 
@@ -159,7 +159,7 @@ Ogni tipo di messaggio utilizza una funzione `_format` dedicata, che a sua volta
 
 ---
 
-## 2. Scrittura Messaggi Chat (`write`)
+## Scrittura Messaggi Chat (`write`)
 
 ![chat_write](/chat/chat_write.png)
 
@@ -183,7 +183,7 @@ gdrcd_api_output($chat_insert_status);
 
 ### Funzioni PHP Coinvolte
 
-#### 1. gdrcd_chat_write_message()
+#### `gdrcd_chat_write_message()`
 
 Determina la tipologia del messaggio e lo salva.
 In modo analogo al flusso di lettura, ogni tipologia di azione usa una funzione dedicata per essere scritta sul database, queste funzioni sono riconoscibili dal suffisso `_save`.
@@ -216,7 +216,7 @@ function gdrcd_chat_write_message($message, $tag_o_destinatario = '', $type = nu
 }
 ```
 
-#### 2. gdrcd_chat_db_insert_for_login()
+#### `gdrcd_chat_db_insert_for_login()`
 
 Utilizza internamente `gdrcd_chat_db_insert()` per salvare il messaggio nella tabella `chat` del database associata al personaggio connesso.
 
@@ -256,7 +256,7 @@ function gdrcd_chat_db_insert(
 }
 ```
 
-#### 3. gdrcd_api_output()
+#### `gdrcd_api_output()`
 
 Restituisce la risposta (successo o errore) al frontend:
 
@@ -268,7 +268,7 @@ function gdrcd_api_output($status) {
 
 ---
 
-## 3. Sistema Abilità / Skill System (`skillsystem`)
+## Sistema Abilità / Skill System (`skillsystem`)
 
 ![chat_skillsystem](/chat/chat_skillsystem.png)
 
