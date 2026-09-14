@@ -4,3 +4,5 @@ packages:
 allowBuilds:
   esbuild: true
   workerd: true
+minimumReleaseAgeExclude:
+  - '@lancher-dev/jaad@0.9.0'
