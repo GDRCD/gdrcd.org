@@ -6,7 +6,7 @@ GDRCD è un progetto open source, stabile e in continua evoluzione. Il core team
 
 ## Linee Guida
 
-### 1. Patch e Plugin
+### Patch e Plugin
 
 - Lo sviluppo della **versione base** di GDRCD5 avviene qui.
 - Patch e plugin vanno sviluppati in un **fork** del repository.
@@ -19,7 +19,7 @@ GDRCD è un progetto open source, stabile e in continua evoluzione. Il core team
 
 ---
 
-### 2. Issue: cosa aprire e cosa no
+### Issue: cosa aprire e cosa no
 
 - Apri issue **solo** per:
   - Bug del codice base.
@@ -29,28 +29,28 @@ GDRCD è un progetto open source, stabile e in continua evoluzione. Il core team
 
 ---
 
-### 3. Regole per le Issue
+### Regole per le Issue
 
 - Segui le linee guida riportate qui: [Aprire Issue](Aprire-Issue.md).
 - Non sono obbligatorie, ma ignorarle è a tuo rischio.
 
 ---
 
-### 4. Richieste personalizzate
+### Richieste personalizzate
 
 - Issue vanno aperte solo per la **versione base**.
 - Per codice personalizzato o modifiche non destinate al core, usa il [server discord](https://discord.gg/zh69CDUf3V) ufficiale o il [forum di GDR-Online](http://gdr-online.com).
 
 ---
 
-### 5. Sviluppo di modifiche sostanziali
+### Sviluppo di modifiche sostanziali
 
 - **Se non fai parte del team**: Fork del repository e Pull Request.
 - **Se sei parte del team**: Branch dedicato e Pull Request.
 
 ---
 
-### 6. Struttura dei branch
+### Struttura dei branch
 
 - Seguiamo il workflow [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow):
   - `master` = produzione.
@@ -61,7 +61,7 @@ GDRCD è un progetto open source, stabile e in continua evoluzione. Il core team
 
 ---
 
-### 7. Ultimi sviluppi
+### Ultimi sviluppi
 
 - Qui trovi gli aggiornamenti più recenti rispetto a GDR-Online.
 - Nota bene:
