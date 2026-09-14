@@ -1,4 +1,6 @@
 ---
+import DownloadIcon from "@/assets/icons/download.svg";
+
 const release = "5.6.0.6";
 ---
 
@@ -8,9 +10,10 @@ const release = "5.6.0.6";
   >
     <div class="min-w-0">
       <a
+        title="Guarda le note dell'ultima versione"
         href=`https://github.com/GDRCD/GDRCD/releases/tag/${release}`
-        class="bg-chip text-chip-ink dark:bg-chip-dark dark:text-chip-ink-dark inline-flex h-8 items-center rounded-full px-3.5 font-mono text-xs tracking-[0.08em] uppercase transition-opacity hover:opacity-80"
-        >Ultima release:<span class="ml-1 font-bold">{release}</span></a
+        class="bg-chip text-chip-ink dark:bg-chip-dark dark:text-chip-ink-dark inline-flex h-8 items-center rounded-full px-3.5 font-mono text-xs tracking-[0.08em] transition-opacity hover:opacity-80"
+        ><span>{release}</span></a
       >
 
       <h1
@@ -30,14 +33,21 @@ const release = "5.6.0.6";
 
       <div class="mt-7 flex flex-wrap gap-3 max-[400px]:flex-col sm:mt-11">
         <a
-          href="https://github.com/GDRCD/GDRCD"
-          class="bg-ink text-bg dark:bg-ink-dark dark:text-bg-dark inline-flex h-13 items-center justify-center rounded-full px-7 text-[0.9375rem] font-medium shadow-sm transition-colors hover:bg-[#33322e] max-[400px]:w-full dark:hover:bg-[#d6d3cc]"
-          >Inizia</a
+          href=`https://github.com/GDRCD/GDRCD/archive/refs/tags/${release}.zip`
+          data-download
+          class="bg-ink text-bg dark:bg-ink-dark dark:text-bg-dark inline-flex h-13 items-center justify-center gap-2.5 rounded-full px-7 text-[0.9375rem] font-medium shadow-sm transition-colors hover:bg-[#33322e] max-[400px]:w-full dark:hover:bg-[#d6d3cc]"
         >
+          <DownloadIcon class="size-5" />
+          Scarica
+        </a>
         <a
-          href="https://docs.gdrcd.org"
-          class="bg-tonal text-ink hover:bg-tonal-hi dark:bg-tonal-dark dark:text-ink-dark dark:hover:bg-tonal-hi-dark inline-flex h-13 items-center justify-center rounded-full px-7 text-[0.9375rem] font-medium transition-colors max-[400px]:w-full"
-          >Documentazione</a
+          href="https://demo.gdrcd.org"
+          target="_blank"
+          rel="noopener"
+          class="bg-tonal text-ink hover:bg-tonal-hi dark:bg-tonal-dark dark:text-ink-dark dark:hover:bg-tonal-hi-dark inline-flex h-13 items-center justify-center gap-2.5 rounded-full px-7 text-[0.9375rem] font-medium transition-colors max-[400px]:w-full"
+          ><span
+            class="bg-chip-ink dark:bg-chip-ink-dark block h-2 w-2 rounded-full"
+          ></span>Demo</a
         >
       </div>
     </div>
