@@ -70,19 +70,22 @@ cambiare la directory della shell chiamante.
 
 ## Gestione CLI
 
-| Comando           | Azione                  |
-| ----------------- | ----------------------- |
-| `stack install`   | Installa comando e hook |
-| `stack uninstall` | Rimuove i file gestiti  |
-| `stack upgrade`   | Aggiorna il core        |
+| Comando           | Azione                 |
+| ----------------- | ---------------------- |
+| `stack install`   | Installa il comando    |
+| `stack activate`  | Genera l'integrazione  |
+| `stack version`   | Mostra la versione     |
+| `stack uninstall` | Rimuove comando e hook |
+| `stack upgrade`   | Aggiorna il core       |
 
-Completion e hook manuali:
+Attivazione manuale nella sessione corrente:
 
 ```bash
-stack completion bash
-stack shell-init bash
+eval "$(stack activate bash)"
 ```
 
 Per Zsh sostituisci `bash` con `zsh`.
+
+La versione è disponibile anche tramite `stack --version`.
 
 Vedi anche [Database](./database).

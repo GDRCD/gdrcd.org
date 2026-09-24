@@ -1,60 +1,44 @@
 # Aggiornamento
 
-`upgrade` aggiorna il core senza sostituire configurazione, progetto o dati
-locali. Il comportamento cambia in base al tipo di installazione.
+`upgrade` installa una release da archivio e preserva configurazione, progetto,
+log e dati locali. Il procedimento è lo stesso per installazioni da archivio e
+checkout Git.
 
-## Aggiornamento
+## Comandi
+
+Ultima release disponibile:
 
 ```bash
 stack upgrade
-stack upgrade --version v4.0.0
+```
+
+Release specifica:
+
+```bash
+stack upgrade --version v4.1.0
+```
+
+Reinstallazione della release già presente:
+
+```bash
 stack upgrade --force
 ```
 
-Il bootstrap preserva:
+I tag devono essere versioni SemVer complete con prefisso `v`, per esempio
+`v4.1.0` o `v4.1.0-rc.1`.
+
+## Dati preservati
+
+L'aggiornamento non sostituisce:
 
 - `.env`
 - `www`
 - `logs`
 - `services`
-- `.version`
+- `.git`, se presente
 
-Il core precedente viene spostato in `.stack-backup-*`.
+Il file `.version` viene invece aggiornato insieme al core.
 
-Nelle installazioni da archivio il backup resta nella directory dello stack e
-può essere rimosso dopo la verifica dell'aggiornamento.
-
-Con Git, il working tree deve essere pulito. `--version` esegue il checkout del
-tag indicato.
-
-## Migrazioni
-
-### v4.0.0
-
-Nuova sintassi database:
-
-```bash
-stack export DATABASE [FILE]
-stack import DATABASE FILE
-stack refresh DATABASE
-```
-
-Rigenera il comando e l'hook:
-
-```bash
-./stack install --force
-```
-
-Questo passaggio sostituisce l'integrazione dinamica precedente con hook e
-completion statici.
-
-Il link usa `PROJECT`; il fallback è `stack`.
-
-Modifiche operative:
-
-- `build` usa la cache; `build --force` la ignora
-- `clean` conserva i volumi; `clean --volumes` li elimina
-- `enable` e `disable` accettano più servizi
-- export e import non modificano i file sorgente
-
-[Changelog](https://github.com/GDRCD/stack/blob/master/CHANGELOG.md)
+L'archivio viene estratto e validato prima di modificare lo stack. Se la
+sostituzione non viene completata, il core precedente viene ripristinato
+automaticamente e le directory temporanee vengono rimosse.

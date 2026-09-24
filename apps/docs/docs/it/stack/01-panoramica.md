@@ -17,7 +17,8 @@ da `www`. Configurazione, log e dati persistenti rimangono separati dal codice.
 - `wget`, `curl` e `tar`
 - WSL su Windows; PowerShell non è supportato
 
-Git è richiesto solo per clonare i repository.
+Git non è richiesto per le installazioni da archivio. È necessario per clonare
+i repository e lavorare sullo stack da una checkout di sviluppo.
 
 ## Servizi
 

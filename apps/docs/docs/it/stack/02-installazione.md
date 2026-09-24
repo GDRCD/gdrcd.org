@@ -31,9 +31,9 @@ git clone https://github.com/GDRCD/stack.git
 cd stack
 ```
 
-Il clone consente di seguire branch e tag del repository. `stack upgrade`
-richiede un working tree pulito e rifiuta l'aggiornamento in presenza di
-modifiche locali.
+Il clone consente di sviluppare lo stack e consultare la versione Git. Anche in
+questa modalità `stack upgrade` installa una release da archivio senza
+rimuovere `.git`.
 
 ## Configurazione iniziale
 
@@ -57,8 +57,17 @@ Installazione per l'utente corrente:
 ```
 
 - link in `$HOME/.local/bin`;
-- nome uguale a `PROJECT`, oppure `stack` se vuoto;
-- hook e completion per Bash o Zsh.
+- nome uguale a `PROJECT`, oppure `stack` se vuoto.
+
+Per installare anche PATH, completion e supporto a `stack cd` nella shell
+predefinita:
+
+```bash
+./stack install --activate
+```
+
+L'attivazione supporta Bash e Zsh e aggiunge una sola riga gestita al relativo
+file di configurazione. Apri una nuova shell dopo l'installazione.
 
 Installazione di sistema:
 
@@ -72,10 +81,7 @@ Opzioni:
 
 - `--target PATH`: directory del link
 - `--force`: reinstalla lo stesso stack
-- `--shell bash|zsh`: seleziona la shell
-- `--no-shell-hook`: installa solo il link
-
-Apri una nuova shell dopo l'installazione.
+- `--activate`: installa anche l'integrazione per la shell indicata da `$SHELL`
 
 Il link punta all'eseguibile dello stack corrente: non copia file e non crea
 una seconda installazione.
