@@ -1,4 +1,4 @@
-# Aggiornamento e migrazione
+# Aggiornamento
 
 `upgrade` aggiorna il core senza sostituire configurazione, progetto o dati
 locali. Il comportamento cambia in base al tipo di installazione.

@@ -1,13 +1,14 @@
-# Stack di sviluppo
+# Cosa è?
 
-GDRCD Stack è l'ambiente Docker locale per sviluppare e provare
+GDRCD [Stack](https://github.com/GDRCD/stack) è l'ambiente Docker locale per sviluppare e provare
 [GDRCD](https://github.com/GDRCD/GDRCD). Fornisce i servizi necessari senza
 vincolare il codice applicativo alla configurazione Docker.
 
 Lo stack risiede nella directory principale; il progetto GDRCD viene montato
 da `www`. Configurazione, log e dati persistenti rimangono separati dal codice.
 
-> Non destinato alla produzione.
+> [!IMPORTANT]
+> _**Non destinato alla produzione!**_
 
 ## Requisiti
 
@@ -35,5 +36,3 @@ mantenere più stack sullo stesso host senza sovrapporre le risorse Docker.
 1. [Installazione](./installazione)
 2. [Configurazione](./configurazione)
 3. [Comandi](./comandi)
-
-[Repository e segnalazioni](https://github.com/GDRCD/stack)

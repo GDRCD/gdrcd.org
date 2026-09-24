@@ -1,4 +1,4 @@
-# Sviluppo dello stack
+# Sviluppo
 
 La CLI usa un dispatcher unico e consumer indipendenti. L'aggiunta di un
 comando non richiede modifiche a un registro centrale.
