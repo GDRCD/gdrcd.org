@@ -8,7 +8,8 @@ Lo stack risiede nella directory principale; il progetto GDRCD viene montato
 da `www`. Configurazione, log e dati persistenti rimangono separati dal codice.
 
 > [!IMPORTANT]
-> _**Non destinato alla produzione!**_
+> _**Non è destinato per ambienti di produzione!**_
+> Non consigliamo il suo utilizzo al di fuori dello sviluppo del proprio applicativo o come ambiente di test locale per le funzionalità.
 
 ## Requisiti
 
