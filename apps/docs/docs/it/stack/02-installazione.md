@@ -1,9 +1,9 @@
 # Installazione
 
-Sono disponibili due modalità: installer rapido per l'uso ordinario e clone
+Sono disponibili due modalità: installazione rapida per l'uso ordinario e clone
 Git per lo sviluppo dello stack. Entrambe producono la stessa struttura.
 
-## Installer rapido
+## Installazione rapida
 
 Esegui nella directory di destinazione:
 
