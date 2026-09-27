@@ -12,8 +12,8 @@
     "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
-    "astro": "^7.3.2",
-    "@lancher-dev/jaad": "^0.9.1"
+    "astro": "^7.3.5",
+    "@lancher-dev/jaad": "^0.9.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
