@@ -32,9 +32,3 @@ i repository e lavorare sullo stack da una checkout di sviluppo.
 
 Container, immagini e rete usano il prefisso `PROJECT`. Questo permette di
 mantenere più stack sullo stesso host senza sovrapporre le risorse Docker.
-
-## Percorso consigliato
-
-1. [Installazione](./installazione)
-2. [Configurazione](./configurazione)
-3. [Comandi](./comandi)
