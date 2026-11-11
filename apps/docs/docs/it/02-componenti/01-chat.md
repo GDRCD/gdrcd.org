@@ -35,7 +35,7 @@ Recupera le azioni dal database formattate in HTML e le organizza in un array pr
 ```php
 function gdrcd_chat_read_messages($luogo, $last_id = 0) {
     ...
-    // itera su tutte le azioni recuperate
+    // scorre su tutte le azioni recuperate
     while ($riga_azione = gdrcd_query($query_azioni, 'assoc')) {
 
         // formatta ogni azione recuperata in html
