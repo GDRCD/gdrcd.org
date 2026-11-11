@@ -1,6 +1,6 @@
 # Chat
 
-Questa documentazione illustra i tre flussi principali che gestiscono la chat AJAX nel sistema GDRCD. Ogni flusso è accompagnato da una spiegazione del processo e delle funzioni PHP coinvolte, con snippet di codice a supporto.
+Questa documentazione illustra i tre flussi principali che gestiscono la chat AJAX nel sistema GDRCD. Per ciascun flusso vengono descritti il processo e le funzioni PHP coinvolte, con relativi snippet di codice a supporto.
 
 ---
 
@@ -171,7 +171,7 @@ Ogni tipo di messaggio utilizza una funzione `_format` dedicata, che a sua volta
 
 ### File Operation
 
-**/pages/chat/op/write.inc.php** è il file responsabile per la scrittura delle azioni in chat, tramite le funzioni chiave mostrate di seguito:
+**/pages/chat/op/write.inc.php** è il file responsabile dell'esecuzione di una determinata prova, di un lancio o dell'uso di un oggetto, in base alla selezione effettuata dall'utente nel form della chat, tramite le funzioni chiave mostrate di seguito:
 
 ```php
 // tenta di scrivere l'azione sul database
