@@ -1,6 +1,6 @@
 # Migrazioni
 
-Le database migrations sono uno strumento fondamentale per la gestione evolutiva e la manutenzione del database in progetti mantenuti da più sviluppatori e con release incrementali. GDRCD adotta un sistema di schema migration ispirato alle best practice dei principali framework professionali (Schema Migration).
+Le database migrations sono uno strumento fondamentale per la gestione evolutiva e la manutenzione del database in progetti mantenuti da più sviluppatori e con release incrementali. GDRCD adotta un sistema di schema migration ispirato alle best practice dei principali framework professionali ([Schema Migration](https://en.wikipedia.org/wiki/Schema_migration)).
 
 ## Come applicare le migrations
 
@@ -112,25 +112,16 @@ Quando si aggiungono, eliminano o modificano uno o più record in una stessa tab
 
 ### Esempi
 
-`Create_Personaggio_Table`
-
-`Drop_Personaggio_Table`
-
-`Add_Id_Column_In_Personaggio_Table`
-
-`Drop_Email_Column_In_Utente_Table`
-
-`Update_Descrizione_Column_In_Gilda_Table`
-
-`Add_Nome_Index_In_Personaggio_Table`
-
-`Drop_DataIscrizione_Index_In_Utente_Table`
-
-`Update_Status_Index_In_Personaggio_Table`
-
-`Insert_ConfigurazioniForum_In_Configurazioni_Table`
-
-`Delete_ConfigurazioniPersonaggio_In_Configurazioni_Table`
+- `Create_Personaggio_Table`
+- `Drop_Personaggio_Table`
+- `Add_Id_Column_In_Personaggio_Table`
+- `Drop_Email_Column_In_Utente_Table`
+- `Update_Descrizione_Column_In_Gilda_Table`
+- `Add_Nome_Index_In_Personaggio_Table`
+- `Drop_DataIscrizione_Index_In_Utente_Table`
+- `Update_Status_Index_In_Personaggio_Table`
+- `Insert_ConfigurazioniForum_In_Configurazioni_Table`
+- `Delete_ConfigurazioniPersonaggio_In_Configurazioni_Table`
 
 ### Nota bene
 
