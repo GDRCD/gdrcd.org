@@ -5,4 +5,6 @@ allowBuilds:
   esbuild: true
   workerd: true
 minimumReleaseAgeExclude:
-  - "@lancher-dev/jaad@0.9.2 || 0.9.3"
+  - "@jaamd/astro@1.0.2"
+  - "@jaamd/core@1.0.2"
+  - "@jaamd/jaad@1.0.2"

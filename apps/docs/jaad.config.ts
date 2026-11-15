@@ -1,4 +1,4 @@
-import { defineJaadConfig } from "@lancher-dev/jaad";
+import { defineJaadConfig } from "@jaamd/jaad";
 
 const GOOGLE_FONTS =
   "https://fonts.googleapis.com/css2" +
