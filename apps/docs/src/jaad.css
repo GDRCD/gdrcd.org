@@ -27,6 +27,9 @@
   --font-sans: "DM Sans", Helvetica, ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-sans);
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --jaad-chrome-width: 80rem;
+  --jaad-sidebar-width: 14rem;
 }
 
 html.dark {
