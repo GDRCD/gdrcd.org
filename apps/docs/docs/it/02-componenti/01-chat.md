@@ -146,12 +146,12 @@ Supponendo di avere un'azione di tipo `A` (azione), il risultato sarà un HTML s
 
 ```html
 <div class="chat_row_A">
-  <img ... />
-  <!-- avatar -->
-  <span class="chat_time">23:03</span>
-  <span class="chat_icons">...</span>
-  <span class="chat_name">Blancks [TAG]</span>
-  <span class="chat_msg">si avvicina al tavolo</span>
+    <img ... />
+    <!-- avatar -->
+    <span class="chat_time">23:03</span>
+    <span class="chat_icons">...</span>
+    <span class="chat_name">Blancks [TAG]</span>
+    <span class="chat_msg">si avvicina al tavolo</span>
 </div>
 ```
 

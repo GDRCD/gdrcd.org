@@ -1,26 +1,26 @@
 {
-  "name": "@gdrcd/landing",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.23.4"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro build && wrangler dev",
-    "check": "astro check",
-    "deploy": "astro build && wrangler deploy",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.3.5",
-    "astro": "^7.4.13",
-    "tailwindcss": "^4.3.5"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.12",
-    "typescript": "^6.0.3",
-    "wrangler": "^4.166.0"
-  }
+    "name": "@gdrcd/landing",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro build && wrangler dev",
+        "check": "astro check",
+        "deploy": "astro build && wrangler deploy",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.3.5",
+        "astro": "^7.4.13",
+        "tailwindcss": "^4.3.5"
+    },
+    "devDependencies": {
+        "@astrojs/check": "^0.9.12",
+        "typescript": "^6.0.3",
+        "wrangler": "^4.166.0"
+    },
+    "engines": {
+        "node": ">=22.23.4"
+    }
 }

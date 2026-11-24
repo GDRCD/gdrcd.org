@@ -11,39 +11,39 @@
  */
 
 :root {
-  --color-background: #f7f6f3;
-  --color-surface: #ffffff;
-  --color-foreground: #3b3935;
-  --color-foreground-bright: #1b1b19;
-  --color-primary: #8a3a16;
+    --color-background: #f7f6f3;
+    --color-surface: #ffffff;
+    --color-foreground: #3b3935;
+    --color-foreground-bright: #1b1b19;
+    --color-primary: #8a3a16;
 
-  --color-primary-dark: #6b2b0f;
+    --color-primary-dark: #6b2b0f;
 
-  --color-error: #b4463a;
-  --color-warning: #b3812f;
-  --color-info: #4a7a9b;
-  --color-success: #4f8a68;
+    --color-error: #b4463a;
+    --color-warning: #b3812f;
+    --color-info: #4a7a9b;
+    --color-success: #4f8a68;
 
-  --font-sans: "DM Sans", Helvetica, ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-sans);
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    --font-sans: 'DM Sans', Helvetica, ui-sans-serif, system-ui, sans-serif;
+    --font-serif: var(--font-sans);
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --jaad-chrome-width: 80rem;
-  --jaad-sidebar-width: 14rem;
+    --jaad-chrome-width: 80rem;
+    --jaad-sidebar-width: 14rem;
 }
 
 html.dark {
-  --color-background: #121211;
-  --color-surface: #1c1c1a;
-  --color-foreground: #cdc9c2;
-  --color-foreground-bright: #edebe6;
-  --color-primary: #e7a177;
-  --color-primary-dark: #f2b998;
+    --color-background: #121211;
+    --color-surface: #1c1c1a;
+    --color-foreground: #cdc9c2;
+    --color-foreground-bright: #edebe6;
+    --color-primary: #e7a177;
+    --color-primary-dark: #f2b998;
 
-  --color-error: #e88b7d;
-  --color-warning: #dcae63;
-  --color-info: #8fbcd8;
-  --color-success: #86c2a0;
+    --color-error: #e88b7d;
+    --color-warning: #dcae63;
+    --color-info: #8fbcd8;
+    --color-success: #86c2a0;
 }
 
 .jaamd-content h1,
@@ -52,26 +52,26 @@ html.dark {
 h1,
 h2,
 h3 {
-  letter-spacing: -0.025em;
+    letter-spacing: -0.025em;
 }
 
 :root,
 html.dark {
-  --jaamd-pre-fg: var(--color-foreground);
-  --jaamd-blockquote-fg: var(--color-foreground-secondary);
-  --jaamd-em-fg: var(--color-foreground-bright);
+    --jaamd-pre-fg: var(--color-foreground);
+    --jaamd-blockquote-fg: var(--color-foreground-secondary);
+    --jaamd-em-fg: var(--color-foreground-bright);
 }
 
 header img {
-  mix-blend-mode: multiply;
+    mix-blend-mode: multiply;
 }
 
 html.dark header img {
-  mix-blend-mode: screen;
-  filter: invert(1);
+    mix-blend-mode: screen;
+    filter: invert(1);
 }
 
 ::selection {
-  background: var(--color-foreground-bright);
-  color: var(--color-background);
+    background: var(--color-foreground-bright);
+    color: var(--color-background);
 }

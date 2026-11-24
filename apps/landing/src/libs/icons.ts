@@ -1,7 +1,7 @@
-import DiscordLogo from "@/assets/icons/discord.svg";
-import GithubLogo from "@/assets/icons/github.svg";
+import DiscordLogo from '@/assets/icons/discord.svg'
+import GithubLogo from '@/assets/icons/github.svg'
 
 export default {
-  github: GithubLogo,
-  discord: DiscordLogo,
-};
+    github: GithubLogo,
+    discord: DiscordLogo,
+}
