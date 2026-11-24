@@ -1,35 +1,35 @@
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches: [main]
+    pull_request:
+    push:
+        branches: [main]
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  quality:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+    quality:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
 
-      - name: Set up pnpm and Node.js
-        uses: pnpm/setup@v2
-        with:
-          version: 12
-          runtime: node@24
-          cache: true
+            - name: Set up pnpm and Node.js
+              uses: pnpm/setup@v2
+              with:
+                  version: 12
+                  runtime: node@24
+                  cache: true
 
-      - name: Check
-        run: pnpm check
+            - name: Check
+              run: pnpm check
 
-      - name: Lint
-        run: pnpm lint
+            - name: Lint
+              run: pnpm lint
 
-      - name: Check formatting
-        run: pnpm format
+            - name: Check formatting
+              run: pnpm format:check
 
-      - name: Build
-        run: pnpm build
+            - name: Build
+              run: pnpm build
