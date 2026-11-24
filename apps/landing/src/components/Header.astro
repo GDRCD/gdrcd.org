@@ -1,28 +1,18 @@
 ---
-import { getCollection } from "astro:content";
-import MobileNavigation from "./MobileNavigation.astro";
-import Navigation from "./Navigation.astro";
+import { getCollection } from 'astro:content'
+import MobileNavigation from './MobileNavigation.astro'
+import Navigation from './Navigation.astro'
 
-const linksCollection = await getCollection("links");
-const links = linksCollection
-  .sort((a, b) => a.data.order - b.data.order)
-  .map(({ data }) => data);
+const linksCollection = await getCollection('links')
+const links = linksCollection.toSorted((a, b) => a.data.order - b.data.order).map(({ data }) => data)
 ---
 
 <header class="relative z-20">
-  <div
-    class="mx-auto flex min-h-18 w-full max-w-330 items-center justify-between gap-6 px-4 py-3 sm:px-8 lg:px-10"
-  >
-    <a href="/" class="flex items-center">
-      <img
-        src="/brand/gdrcd-wordmark.png"
-        alt="GDRCD"
-        width="240"
-        height="48"
-        class="brand-mark h-6 w-auto"
-      />
-    </a>
-    <Navigation links={links} />
-    <MobileNavigation links={links} />
-  </div>
+    <div class="mx-auto flex min-h-18 w-full max-w-330 items-center justify-between gap-6 px-4 py-3 sm:px-8 lg:px-10">
+        <a href="/" class="flex items-center">
+            <img src="/brand/gdrcd-wordmark.png" alt="GDRCD" width="240" height="48" class="brand-mark h-6 w-auto" />
+        </a>
+        <Navigation links={links} />
+        <MobileNavigation links={links} />
+    </div>
 </header>
